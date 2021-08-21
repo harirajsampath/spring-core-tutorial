@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="john" class="com.bita.training.model.Employee">
+    	<!-- <property name="firstName" value="John"/> -->
+    	<property name="lastName" value="Doe"/>
+    	<property name="age" value="25"/>
+    	<property name="address" ref="addr"/>
+    </bean>
+    
+    <bean id="mary" class="com.bita.training.model.Employee">
+    	<!-- <property name="firstName" value="Mary"/> -->
+    	<property name="lastName" value="Doe"/>
+    	<property name="age" value="25"/>
+    	<property name="address" ref="addr"/>
+    </bean>
+    
+    <bean id="constructorInjectObject" class="com.bita.training.model.Employee" primary="true">
+    	<constructor-arg name="firstName" value="Bob"/>
+    	<constructor-arg name="lastName" value="Doe"/>
+    	<constructor-arg name="age" value="30"/>
+    	<constructor-arg name="address" ref="addr"/>
+	</bean>
+    
+
+    <bean id="addr" class="com.bita.training.model.Address">
+    	<property name="zipCode" value="60061"/>
+    	<property name="street" value="Riverview road"/>
+    	<property name="houseNumber" value="3"/>
+    </bean>
+</beans>
